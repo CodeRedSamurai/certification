@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'standings/:id', component: StandingsComponent },
   { path: 'fixtures/:id/:teamId', component: FixturesComponent },
   { path: 'error', component: ErrorComponent },
-  { path: '**', component: AppComponent },
+  { path: '**', component: StandingsComponent },
 ];
 
 @NgModule({

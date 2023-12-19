@@ -21,12 +21,15 @@ export class StandingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.leagueId = params['id'] || defaultLeagueId;
-      this.apiService
-        .getStandings(this.leagueId)
-        .subscribe((standings: Standings) => {
-          this.standingsResponse = standings['response'][0].league.standings[0];
-        });
+      this.leagueId = params['id'];
+      if (this.leagueId) {
+        this.apiService
+          .getStandings(this.leagueId)
+          .subscribe((standings: Standings) => {
+            this.standingsResponse =
+              standings['response'][0].league.standings[0];
+          });
+      }
     });
   }
 

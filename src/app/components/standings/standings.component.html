@@ -14,4 +14,4 @@
         <td>{{teamStanding.points}}</td>
     </tr>
 </table>
-<app-loader *ngIf="!standingsResponse.length">Loading...</app-loader>
+<app-loader *ngIf="!standingsResponse.length && this.leagueId">Loading...</app-loader>
