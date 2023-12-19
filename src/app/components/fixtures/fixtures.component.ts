@@ -36,4 +36,7 @@ export class FixturesComponent implements OnInit {
   backToStandings(): void {
     this.router.navigateByUrl(`standings/${this.leagueId}`);
   }
+  trackByIndex(index: number): number {
+    return index;
+  }
 }

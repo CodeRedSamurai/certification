@@ -2,7 +2,7 @@
     <tr>
         <th *ngFor="let heading of tableHeadings">{{heading}}</th>
     </tr>
-    <tr *ngFor="let teamStanding of standingsResponse; index as i">
+    <tr *ngFor="let teamStanding of standingsResponse; index as i; trackBy: trackByIndex">
         <td>{{teamStanding.rank}}</td>
         <td><img [src]="teamStanding.team.logo" /></td>
         <td (click)="getTeamFixtures(teamStanding)">{{teamStanding.team.name}}</td>

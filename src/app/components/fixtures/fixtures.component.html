@@ -1,5 +1,5 @@
 <div *ngIf="fixturesResponse.length">
-    <section *ngFor="let fixture of fixturesResponse">
+    <section *ngFor="let fixture of fixturesResponse; index as i; trackBy: trackByIndex">
         <img [src]="fixture.teams.home.logo" />
         <span>{{fixture.teams.home.name}}</span>
         <span>{{fixture.goals.home}}</span>

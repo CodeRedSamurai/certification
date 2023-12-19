@@ -35,4 +35,8 @@ export class StandingsComponent implements OnInit {
       `fixtures/${this.leagueId}/${teamStanding.team.id}`
     );
   }
+
+  trackByIndex(index: number): number {
+    return index;
+  }
 }
