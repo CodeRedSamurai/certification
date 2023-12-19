@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.scss"],"names":[],"mappings":"AAAA;AACA;EACI;EACA;AACJ;AAEA;EACI;AACJ,C","file":"styles.css","sourcesContent":["/* You can add global styles to this file, and also import other style files */\nimg {\n    width: 2em;\n    height: 2em;\n}\n\nbody {\n    background-color: gray;\n}"],"sourceRoot":"webpack:///"}
