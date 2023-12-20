@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Fixtures, Response } from 'src/app/interface/fixtures';
 import { ApiService } from 'src/app/services/api.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-fixtures',
   templateUrl: './fixtures.component.html',
   styleUrls: ['./fixtures.component.scss'],
 })
-export class FixturesComponent implements OnInit {
+export class FixturesComponent implements OnInit, OnDestroy {
   leagueId: string | null = '';
   teamId: string | null = '';
+  $apiService!: Subscription;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -26,7 +28,7 @@ export class FixturesComponent implements OnInit {
       this.teamId = paramMap.get('teamId');
     });
 
-    this.apiService
+    this.$apiService = this.apiService
       .getFixtures(this.teamId, this.leagueId)
       .subscribe((fixtures: Fixtures) => {
         this.fixturesResponse = fixtures['response'];
@@ -38,5 +40,9 @@ export class FixturesComponent implements OnInit {
   }
   trackByIndex(index: number): number {
     return index;
+  }
+
+  ngOnDestroy(): void {
+    this.$apiService?.unsubscribe();
   }
 }

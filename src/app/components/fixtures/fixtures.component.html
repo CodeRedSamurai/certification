@@ -1,3 +1,4 @@
+<app-country-nav ></app-country-nav>
 <div *ngIf="fixturesResponse.length">
     <section *ngFor="let fixture of fixturesResponse; index as i; trackBy: trackByIndex">
         <img [src]="fixture.teams.home.logo" />
