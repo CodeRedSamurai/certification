@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { countriesList, appTitle } from './constants/application-constants';
+import { appTitle } from './constants/application-constants';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,4 @@ import { countriesList, appTitle } from './constants/application-constants';
 })
 export class AppComponent {
   title = appTitle;
-  countriesList = countriesList;
 }

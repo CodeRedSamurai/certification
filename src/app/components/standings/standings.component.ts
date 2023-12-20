@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Standings, Standing } from 'src/app/interface/standings';
 import { tableHeadings } from 'src/app/constants/application-constants';
-import { defaultLeagueId } from 'src/app/constants/application-constants';
+import { countriesList } from 'src/app/constants/application-constants';
 @Component({
   selector: 'app-standings',
   templateUrl: './standings.component.html',
@@ -13,6 +13,7 @@ export class StandingsComponent implements OnInit {
   standingsResponse: Standing[] = [];
   leagueId: string = '';
   tableHeadings: string[] = tableHeadings;
+  countriesList = countriesList;
   constructor(
     private router: Router,
     private apiService: ApiService,
